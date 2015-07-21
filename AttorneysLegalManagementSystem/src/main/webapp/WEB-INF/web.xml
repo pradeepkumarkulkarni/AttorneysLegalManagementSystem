@@ -7,19 +7,19 @@
 	</welcome-file-list>
 
 	<servlet>
-		<servlet-name>almsDispatcher</servlet-name>
+		<servlet-name>alms</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>almsDispatcher</servlet-name>
+		<servlet-name>alms</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/almsDispatcher-servlet.xml</param-value>
+		<param-value>/WEB-INF/alms-servlet.xml</param-value>
 	</context-param>
 
 	<listener>

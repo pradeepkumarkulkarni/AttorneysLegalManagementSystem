@@ -9,8 +9,10 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-	<context:component-scan base-package="com.procasi.legalmansys.core.controller" />
+	<context:component-scan base-package="com.procasi.alms.core.controller" />
 
 	<mvc:annotation-driven />
-
+	
+	<import resource="classpath*:/config/bean-config.xml"/>
+    <import resource="classpath*:test-config.xml"/>
 </beans>
