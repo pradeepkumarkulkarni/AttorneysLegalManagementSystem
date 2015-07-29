@@ -1,6 +1,6 @@
 var app = new Object();
-var url;
 app.currentView;
+var serverURL;
 
 // Console fix for IE.
 if (!window.console) console = {log : function() {}};
@@ -8,6 +8,8 @@ if (!window.console) console = {log : function() {}};
 window.MainRouter = Backbone.Router.extend({
 	initialize : function() {
 		console.log("Launching main router...");
+		serverURL = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + "/AttorneysLegalManagementSystem";
+		console.log("serverURL:" + serverURL);
 	},
 
 	routes : {
@@ -37,7 +39,8 @@ window.MainRouter = Backbone.Router.extend({
 	}
 });
 
-templateLoader.load([ "LoginView", "WelcomeView", "HeaderView", "FooterView", "DocumentListView"], function() {
+templateLoader.load([ "LoginView", "WelcomeView", "HeaderView", "FooterView", "DocumentListView", "UsersListView", 
+                      "DocumentListItemView"], function() {
 	app.mainRouter = new MainRouter();
 	app.actionsRouter = new ActionsRouter();
 	Backbone.history.start();

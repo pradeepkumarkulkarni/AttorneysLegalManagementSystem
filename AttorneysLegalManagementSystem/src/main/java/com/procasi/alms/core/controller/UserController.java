@@ -35,6 +35,7 @@ public class UserController {
 	@RequestMapping(value="/getUser", method=RequestMethod.GET)
 	@ResponseBody
 	public User getUser() {
+		System.out.println("get User controller service");
 		return this.userService.getUser();
 	}
 	
@@ -46,6 +47,7 @@ public class UserController {
 	@RequestMapping(value="/getAllUsers", method=RequestMethod.GET)
 	@ResponseBody
 	public List<User> getAllUsers() {
+		System.out.println("get all Users controller service");
 		return this.getAllUsers();
 	}
 }

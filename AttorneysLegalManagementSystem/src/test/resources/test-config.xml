@@ -11,4 +11,6 @@
 
 <bean id ="UserServiceTest" class="mock.servicemock.UserServiceMockImplementation" lazy-init="false"/>
 
+<bean id ="DocumentServiceTest" class="mock.servicemock.DocumentServiceMockImplementation" lazy-init="false"/>
+
 </beans>
