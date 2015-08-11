@@ -7,6 +7,7 @@ window.User = Backbone.Model.extend({
 	
 	defaults : {
 		idUser : 0,
+		pass: "",
 		name : "",
 		profile : "",
 		lastLoginDate : "",

@@ -26,4 +26,18 @@ public interface UserService {
 	 * @return the users list.
 	 */
 	List<User> getAllUsers();
+	
+	/**
+	 * Saves an user.
+	 * 
+	 * @return the user identifier.
+	 */
+	long saveUser();
+	
+	/**
+	 * Modifies an user.
+	 * 
+	 * @return the user identifier.
+	 */
+	long updateUser();
 }

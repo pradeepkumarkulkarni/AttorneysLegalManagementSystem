@@ -5,11 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.procasi.alms.core.bean.Document;
+import com.procasi.alms.core.bean.User;
 import com.procasi.alms.core.service.DocumentService;
 
 /**
@@ -22,7 +24,7 @@ import com.procasi.alms.core.service.DocumentService;
 public class DocumentController {
 	
 	@Autowired
-	@Qualifier(value = "DocumentServiceTest")
+	@Qualifier(value = "DocumentServiceMock")
 	DocumentService documentService;
 	
 	/**
@@ -34,7 +36,7 @@ public class DocumentController {
 	 */
 	@RequestMapping(value="/getDocument", method=RequestMethod.GET)
 	@ResponseBody
-	public Document getUser() {
+	public Document getUser(@RequestBody User user) {
 		System.out.println("get Document controller service");
 		return this.documentService.getDocument();
 	}

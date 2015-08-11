@@ -19,7 +19,7 @@ window.DocumentListView = Backbone.View.extend({
 							  <div class="form-group">\
 							    <label for="inputDoc"></label>\
 							    <input type="text" class="form-control" id="inputDoc" placeholder="Ingrese el n&uacute;mero de folio">\
-								<button type="submit" class="btn btn-primary">Buscar</button>\
+								<button type="submit" class="btn btn-info">Buscar</button>\
 							  </div>\
 							  </form>\
 					      </div>\
@@ -36,7 +36,7 @@ window.DocumentListView = Backbone.View.extend({
 		_.each (this.collection.models, function (data){
 			$("#docListTable", this.el).append(new DocumentListItemView({model : data }).render().el);
 		}, this);
-		
+
 		return this;
 	}
 });

@@ -14,6 +14,11 @@ public class User {
 	private long idUser;
 	
 	/**
+	 * The user's password.
+	 */
+	private String pass;
+	
+	/**
 	 * The user's name.
 	 */
 	private String name;
@@ -48,6 +53,23 @@ public class User {
 	 */
 	public void setIdUser(long pIdUser) {
 		this.idUser = pIdUser;
+	}
+
+	/**
+	 * Gets the pass.
+	 *
+	 * @return the pass value.
+	 */
+	public String getPass() {
+		return this.pass;
+	}
+
+	/**
+	 * @param pPass
+	 * The pass to set.
+	 */
+	public void setPass(String pPass) {
+		this.pass = pPass;
 	}
 
 	/**

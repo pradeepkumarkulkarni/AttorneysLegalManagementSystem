@@ -6,7 +6,8 @@ var ActionsRouter = Backbone.Router.extend({
 
 	routes : {
 		"documentsList" : "documentListView",
-		"usersList" : "usersListView"
+		"usersList" : "usersListView",
+		"newUser" : "newUserView"
 	}, 
 	
 	documentListView : function () {
@@ -32,6 +33,17 @@ var ActionsRouter = Backbone.Router.extend({
 				alert("Something failed!");
 			}
 		});
-		
+	},
+	
+	newUserView : function () {
+		var profiles = new ProfileCollection();
+		profiles.fetch({
+			success: function() {	
+				this.userView = new NewUserView({collection:profiles});
+				$("#content").html(this.userView.el);
+			}, error: function() {
+				alert("Something failed!");
+			}
+		});
 	}
 });

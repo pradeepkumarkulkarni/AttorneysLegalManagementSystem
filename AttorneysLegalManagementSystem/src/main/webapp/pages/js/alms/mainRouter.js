@@ -40,7 +40,7 @@ window.MainRouter = Backbone.Router.extend({
 });
 
 templateLoader.load([ "LoginView", "WelcomeView", "HeaderView", "FooterView", "DocumentListView", "UsersListView", 
-                      "DocumentListItemView"], function() {
+                      "DocumentListItemView", "NewUserView"], function() {
 	app.mainRouter = new MainRouter();
 	app.actionsRouter = new ActionsRouter();
 	Backbone.history.start();
