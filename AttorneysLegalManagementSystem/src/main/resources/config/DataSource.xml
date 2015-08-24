@@ -1,0 +1,54 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- <bean -->
+	<!-- class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
+	<!-- <property name="location"> -->
+	<!-- <value>properties/database.properties</value> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="username" value="PROCASIUSR" />
+		<property name="password" value="olvera6" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="mappingResources">
+			<list>
+				<value>/hibernate/User.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+<!-- 	<bean id="sessionFactory" -->
+<!-- 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> -->
+<!-- 		<property name="configLocation" value="classpath:hibernate.cfg.xml" /> -->
+<!-- 	</bean> -->
+
+	<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
+	<!-- <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property> -->
+	<!-- <property name="url" -->
+	<!-- value="jdbc:oracle:thin:@teoramon.bansel.it:1540:ORAMON"></property> -->
+	<!-- <property name="username" value="SVIL_WKS"></property> -->
+	<!-- <property name="password" value="wksc_123"></property> -->
+	<!-- <property name="initialSize" value="25"></property> -->
+	<!-- <property name="maxActive" value="50"></property> -->
+	<!-- <property name="maxIdle" value="25"></property> -->
+	<!-- </bean> -->
+
+</beans>

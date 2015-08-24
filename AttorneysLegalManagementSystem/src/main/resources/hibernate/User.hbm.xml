@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.procasi.alms.core.bean.User" table="USERS2">
+		<id name="idUser" type="java.lang.Long">
+			<column name="ID_USER" />
+			<generator class="identity" />
+		</id>
+		<property name="pass" type="string">
+			<column name="PASS" length="20" not-null="false" unique="true" />
+		</property>
+		<property name="name" type="string">
+			<column name="NAME" length="20" not-null="true" unique="true" />
+		</property>
+		<property name="profile" type="string">
+			<column name="PROFILE" length="20" not-null="true" unique="true" />
+		</property>
+		<property name="lastLoginDate" type="date">
+			<column name="LAST_LOGIN_DATE" length="20" not-null="true" unique="true" />
+		</property>
+		<property name="status" type="string">
+			<column name="STATUS" length="20" not-null="true" unique="true" />
+		</property>
+	</class>
+</hibernate-mapping>

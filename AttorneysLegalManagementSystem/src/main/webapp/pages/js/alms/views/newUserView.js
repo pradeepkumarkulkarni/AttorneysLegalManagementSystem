@@ -25,12 +25,12 @@ window.NewUserView = Backbone.View.extend({
 	},
 	
 	events : {
-		"click #saveUserBtn" : "saveUser"
+		"click #saveUserBtn" : "saveUser",
+		"click #clearFormBtn" : "cleanUserForm"
 	},
 	
 	saveUser : function(event) {
 		event.preventDefault();
-		
 		var name = $("#name").val();
 		var pass = $("#pass").val();
 		var profile = $("#profile").val();
@@ -49,11 +49,29 @@ window.NewUserView = Backbone.View.extend({
 					request.setRequestHeader("Authorization", "Just a header here!");
 				}, 
 				success: function (jhx, response){
-					alert(response);
+					$("#name").prop("disabled", true);
+					$("#pass").prop("disabled", true);
+					$("#profile").prop("disabled", true);
+					$("#saveUserBtn").prop("disabled", true);
+					$("#clearFormBtn").show();
+					
+					if(response == 100) {					
+						$(".alert").show().html("El usuario se ha creado satisfactoriamente.");
+					}
 				}, error : function (response){
 					alert(response);
 				}
 			});
 		}
+	},
+	
+	cleanUserForm : function(event) {
+		event.preventDefault();
+		$("#name").prop("disabled", false).val('');
+		$("#pass").prop("disabled", false).val('');
+		$("#profile").prop("disabled", false);
+		$("#saveUserBtn").prop("disabled", false);
+		$("#clearFormBtn").hide();
+		$(".alert").hide();
 	}
 });

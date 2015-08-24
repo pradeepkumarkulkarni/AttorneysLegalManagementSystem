@@ -9,10 +9,10 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-<bean id ="UserServiceMock" class="mock.servicemock.UserServiceMockImplementation" lazy-init="false"/>
+<bean id ="userServiceMock" class="mock.servicemock.UserServiceMockImplementation" lazy-init="false"/>
 
-<bean id ="DocumentServiceMock" class="mock.servicemock.DocumentServiceMockImplementation" lazy-init="false"/>
+<bean id ="documentServiceMock" class="mock.servicemock.DocumentServiceMockImplementation" lazy-init="false"/>
 
-<bean id ="ProfileServiceMock" class="mock.servicemock.ProfileServiceMockImplementation" lazy-init="false"/>
+<bean id ="profileServiceMock" class="mock.servicemock.ProfileServiceMockImplementation" lazy-init="false"/>
 
 </beans>

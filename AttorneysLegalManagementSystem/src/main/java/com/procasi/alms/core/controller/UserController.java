@@ -23,7 +23,7 @@ import com.procasi.alms.core.service.UserService;
 public class UserController {
 	
 	@Autowired
-	@Qualifier(value = "UserServiceMock")
+	@Qualifier(value = "userServiceMock")
 	UserService userService;
 	
 	/**

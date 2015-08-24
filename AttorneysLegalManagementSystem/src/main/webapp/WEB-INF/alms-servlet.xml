@@ -13,6 +13,7 @@
 
 	<mvc:annotation-driven />
 	
-	<import resource="classpath*:/config/bean-config.xml"/>
-    <import resource="classpath*:test-config.xml"/>
+	<import resource="classpath*:/config/Beans.xml"/>
+	<import resource="classpath*:/config/DataSource.xml"/>
+    <import resource="classpath*:/test-config.xml"/>
 </beans>

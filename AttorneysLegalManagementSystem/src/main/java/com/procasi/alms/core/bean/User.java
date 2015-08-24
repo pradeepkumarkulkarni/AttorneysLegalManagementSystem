@@ -1,12 +1,18 @@
 package com.procasi.alms.core.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 
  * @author EdgarOlvera
  */
-public class User {
+public class User implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The user's identifier.
