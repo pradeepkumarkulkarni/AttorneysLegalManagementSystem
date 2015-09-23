@@ -24,7 +24,7 @@ import com.procasi.alms.core.service.DocumentService;
 public class DocumentController {
 	
 	@Autowired
-	@Qualifier(value = "documentServiceMock")
+	@Qualifier(value = "documentService")
 	DocumentService documentService;
 	
 	/**

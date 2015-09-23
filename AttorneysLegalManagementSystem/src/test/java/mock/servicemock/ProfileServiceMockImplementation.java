@@ -3,6 +3,8 @@ package mock.servicemock;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.procasi.alms.core.bean.Profile;
 import com.procasi.alms.core.service.ProfileService;
 
@@ -11,6 +13,7 @@ import com.procasi.alms.core.service.ProfileService;
  * 
  * @author EdgarOlvera
  */
+@Service
 public class ProfileServiceMockImplementation implements ProfileService {
 
 	@Override

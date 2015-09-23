@@ -3,10 +3,12 @@ package com.procasi.alms.core.service.serviceimplementation;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.procasi.alms.core.bean.User;
-import com.procasi.alms.core.persistence.dao.daoimplementation.UserDaoImplementation;
+import com.procasi.alms.core.persistence.dao.UserDao;
 import com.procasi.alms.core.service.UserService;
 
 /**
@@ -14,10 +16,11 @@ import com.procasi.alms.core.service.UserService;
  * 
  * @author EdgarOlvera
  */
+@Service
 public class UserServiceImplementation implements UserService {
 
-//	@Autowired
-//	UserDao userDao;
+	@Autowired
+	UserDao userDao;
 	
 	@Override
 	public User getUser() {
@@ -34,9 +37,8 @@ public class UserServiceImplementation implements UserService {
 
 	@Transactional
 	@Override
-	public List<User> getAllUsers() {
-		UserDaoImplementation dao = new UserDaoImplementation();
-		return dao.findAllUsers();
+	public List<User> getAllUsers() {		
+			return this.userDao.findAllUsers();
 	}
 
 	@Override

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.procasi.alms.core.bean.User;
 import com.procasi.alms.core.service.UserService;
 
@@ -12,6 +14,7 @@ import com.procasi.alms.core.service.UserService;
  * 
  * @author EdgarOlvera
  */
+@Service
 public class UserServiceMockImplementation implements UserService {
 
 	@Override
