@@ -6,8 +6,8 @@ var ActionsRouter = Backbone.Router.extend({
 
 	routes : {
 		"documentsList" : "documentListView",
-		"usersList" : "usersListView",
-		"newUser" : "newUserView"
+		"usersList" 	: "usersListView",
+		"newUser" 		: "newUserView"
 	}, 
 	
 	documentListView : function () {
@@ -24,11 +24,11 @@ var ActionsRouter = Backbone.Router.extend({
 	},
 	
 	usersListView : function () {
-		var user = new User();	
-		user.fetch({
+		var users = new UserCollection();	
+		users.fetch({
 			success: function() {	
-				this.usersListView = new UsersListView({model:user});
-				$('#content').html(this.usersListView.el);
+				this.userListView = new UserListView({collection : users});
+				$('#content').html(this.userListView.el);
 			}, error: function() {
 				alert("Something failed!");
 			}

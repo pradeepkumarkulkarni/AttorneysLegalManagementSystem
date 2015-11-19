@@ -9,6 +9,7 @@
 	<servlet>
 		<servlet-name>alms</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+<!-- 		<init-param></init-param> -->
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
@@ -19,9 +20,7 @@
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>WEB-INF/alms-servlet.xml</param-value>
-		<param-value>config/DataSource.xml</param-value>
-		<param-value>config/Beans.xml</param-value>
+		<param-value>/WEB-INF/alms-servlet.xml</param-value>
 	</context-param>
 
 	<listener>

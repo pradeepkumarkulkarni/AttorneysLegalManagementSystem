@@ -3,20 +3,15 @@ package mock.servicemock;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.procasi.alms.core.bean.Profile;
-import com.procasi.alms.core.service.ProfileService;
 
 /**
  * The profile service mock, for test purposes.
  * 
  * @author EdgarOlvera
  */
-@Service
-public class ProfileServiceMockImplementation implements ProfileService {
+public class ProfileServiceMockImplementation {
 
-	@Override
 	public Profile getProfile() {
 		System.out.println("getProfile service mock");
 		Profile profile = new Profile();
@@ -26,7 +21,6 @@ public class ProfileServiceMockImplementation implements ProfileService {
 		return profile;
 	}
 
-	@Override
 	public List<Profile> getAllProfiles() {
 		System.out.println("getAllProfiles service mock");
 		List<Profile> profiles = new ArrayList<Profile>();

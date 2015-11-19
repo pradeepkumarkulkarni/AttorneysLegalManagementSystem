@@ -42,6 +42,7 @@ window.DocumentListView = Backbone.View.extend({
 });
 
 window.DocumentListItemView = Backbone.View.extend({
+	
 	tagName: "tr",
 	
 	initialize: function () {

@@ -3,7 +3,6 @@ package com.procasi.alms.core.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +22,6 @@ import com.procasi.alms.core.service.UserService;
 public class UserController {
 	
 	@Autowired
-	@Qualifier(value = "userServiceMock")
 	UserService userService;
 	
 	/**

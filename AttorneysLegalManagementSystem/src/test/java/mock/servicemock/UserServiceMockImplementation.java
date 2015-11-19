@@ -4,20 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.procasi.alms.core.bean.User;
-import com.procasi.alms.core.service.UserService;
 
 /**
  * The user service mock for test purposes.
  * 
  * @author EdgarOlvera
  */
-@Service
-public class UserServiceMockImplementation implements UserService {
+public class UserServiceMockImplementation {
 
-	@Override
 	public User getUser() {
 		System.out.println("getUser Mock service");
 		User user = new User();
@@ -30,7 +25,6 @@ public class UserServiceMockImplementation implements UserService {
 		return user;
 	}
 
-	@Override
 	public List<User> getAllUsers() {
 		System.out.println("getAllUsers Mock service");
 		List<User> users = new ArrayList<User>();		
@@ -81,13 +75,11 @@ public class UserServiceMockImplementation implements UserService {
 		return users;
 	}
 
-	@Override
 	public long saveUser() {
 		System.out.println("saveUser Mock service");
 		return 100;
 	}
 
-	@Override
 	public long updateUser() {
 		System.out.println("updateUser Mock service");
 		return 200;

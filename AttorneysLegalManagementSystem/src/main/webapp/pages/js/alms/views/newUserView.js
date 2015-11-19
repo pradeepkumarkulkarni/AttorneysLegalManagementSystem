@@ -62,6 +62,10 @@ window.NewUserView = Backbone.View.extend({
 					alert(response);
 				}
 			});
+		} else {
+			$(".alert").show().html("El usuario que est&aacute; intentando registrar ya se encuentra dado de alta en el sistema.");
+			$(".alert").attr("class").firstChild.removeAttr;
+//			$(".alert").attr("alert-warning").setAttribute;
 		}
 	},
 	

@@ -7,14 +7,13 @@ if (!window.console) console = {log : function() {}};
 
 window.MainRouter = Backbone.Router.extend({
 	initialize : function() {
-		console.log("Launching main router...");
 		serverURL = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + "/AttorneysLegalManagementSystem";
 		console.log("serverURL:" + serverURL);
 	},
 
 	routes : {
-		"" : "showLogin",
-		"welcome" : "showWelcome"
+		"" 			: "showLogin",
+		"welcome" 	: "showWelcome"
 	},
 
 	showLogin : function() {
@@ -39,8 +38,8 @@ window.MainRouter = Backbone.Router.extend({
 	}
 });
 
-templateLoader.load([ "LoginView", "WelcomeView", "HeaderView", "FooterView", "DocumentListView", "UsersListView", 
-                      "DocumentListItemView", "NewUserView"], function() {
+templateLoader.load([ "LoginView", "WelcomeView", "HeaderView", "FooterView", "DocumentListView", "UserListView", 
+                      "DocumentListItemView", "NewUserView", "UserListItemView"], function() {
 	app.mainRouter = new MainRouter();
 	app.actionsRouter = new ActionsRouter();
 	Backbone.history.start();

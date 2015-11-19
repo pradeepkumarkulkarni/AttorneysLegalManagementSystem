@@ -1,5 +1,9 @@
+/**
+ * The User model.
+ */
 window.User = Backbone.Model.extend({
-	attributeId: "",
+	
+	idAttribute: "idUser",
 	
 	url : function() {                        
         return serverURL + '/rest/user/getUser';
@@ -15,7 +19,15 @@ window.User = Backbone.Model.extend({
 	}
 });
 
-window.UsersCollection = Backbone.Collection.extend({
+/**
+ * The user collection.
+ */
+window.UserCollection = Backbone.Collection.extend({
+
 	model : User,
-	url: 'user/getAllUsers',
+	
+	url: function () {
+		var url = serverURL + '/rest/user/getAllUsers';
+		return url;
+	}
 });
